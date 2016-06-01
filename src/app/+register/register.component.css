@@ -1,0 +1,17 @@
+.register {
+  color: white;
+  background-color: black;
+  height: 100vh
+}
+
+input {
+  background-color: black;
+}
+
+input:active {
+  border: 1px solid blue;
+}
+
+.button {
+
+}
