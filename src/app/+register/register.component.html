@@ -1,26 +1,26 @@
-<div class= "register container">
+<div class= "register">
   <h1> Register </h1>
 
-  <form class= "register-form" action="index.html" method="post">
+  <form #registerForm="ngForm" (ngSubmit)="onSubmit($event, registerForm)">
     <div>
         <label for="name">
-          <input type="text" placeholder= "Name" id="name" />
+          <input ngControl="name" [(ngModel)]="colonist.name" type="text" id="name" placeholder=" Name" />
         </label>
     </div>
+
     <div>
         <label for="age">
-          <input type="text" placeholder= "Age" id="age" />
+          <input ngControl="age" [(ngModel)]="colonist.age" type="text" id="age" placeholder=" Age"/>
         </label>
     </div>
-    <select name="Select">
-      <option value="value1"> Select occupation </option>
-      <option value="value2"> Dust farmer </option>
-      <option value="value3"> Alien hunter </option>
-      <option value="value4"> Battery technician </option>
-      <option value="value5"> Yoga teacher </option>
-      <option value="value6"> Front-end developer </option>
-    </select>
-  </form>
 
-  <button type="button" name="button"> Check in </button>
+    <select ngControl="job" [(ngModel)]="colonist.job_id" class="Select occupation" >
+      <option [value]=NO_OCCUPATION_SELECTED> Select occupation </option>
+      <option *ngFor="let job of occupations" [value]="job.id">{{ job.name }} </option>
+    </select>
+
+    <div class="button">
+      <button type="submit" [disabled]="noOccupation || !registerForm.form.valid"> Check in </button>
+    </div>
+  </form>
 </div>

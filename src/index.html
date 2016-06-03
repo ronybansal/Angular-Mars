@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <title>Angular2Project</title>
   <base href="/">
+  <link rel="stylesheet" href="./app/shared/styles/style.css">
 
   {{#unless environment.production}}
   <script src="/ember-cli-live-reload.js" type="text/javascript"></script>
@@ -14,7 +15,7 @@
 <body>
   <angular2-project-app>Loading...</angular2-project-app>
 
-  
+
 
     {{#each scripts.polyfills}}<script src="{{.}}"></script>{{/each}}
     <script>
@@ -23,7 +24,7 @@
       }).catch(console.error.bind(console));
     </script>
 
-  
+
 
 
 

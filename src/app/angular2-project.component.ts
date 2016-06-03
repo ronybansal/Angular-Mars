@@ -9,7 +9,6 @@ import { ReportsComponent } from './+reports';
   moduleId: module.id,
   selector: 'angular2-project-app',
   templateUrl: 'angular2-project.component.html',
-  styleUrls: ['angular2-project.component.css'],
   directives: [ROUTER_DIRECTIVES],
   providers: [ROUTER_PROVIDERS]
 })
@@ -20,10 +19,10 @@ import { ReportsComponent } from './+reports';
   {path: '/reports', component: ReportsComponent}
 ])
 export class Angular2ProjectAppComponent implements OnInit{
-  
-  
+
+
   constructor(private router: Router) {
-    
+
   }
 
   ngOnInit(){
