@@ -1,0 +1,26 @@
+.encounters h1 {
+  display: flex;
+  flex-direction: column;
+  font-size: 35px;
+  text-align: center;
+}
+
+.encounters span {
+  font-size: 18px;
+}
+
+.encounter-list {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 50vh;
+}
+
+button {
+  cursor: pointer;
+  outline: none;
+  color: white;
+  font-size: 35px;
+  background-color: black;
+  height: 30vh;
+  width: 100%;
+}

@@ -1,3 +1,20 @@
-<p>
-  reports works!
-</p>
+<div class= "report">
+  <h1> Report Encounter
+    <span> Saftey on Mars is your responsibility </span>
+  </h1>
+
+  <form #reportForm="ngForm" (ngSubmit)="onSubmit($event)">
+
+    <select ngControl="atype" [(ngModel)]="encounters.atype" class="alien-type">
+      <option [value]=NO_ALIEN_SELECTED> Select alien type </option>
+      <option *ngFor="let alien of aliens" [value]="alien.type">{{ alien.type }} </option>
+    </select>
+
+    <textarea ngControl="action"
+          [(ngModel)]="encounters.action" type="text" id="action"
+          placeholder=" Action taken">
+    </textarea>
+
+      <button type="submit" [disabled]="noEncounters || !reportForm.form.valid"> Submit Report </button>
+  </form> -->
+</div>

@@ -1,5 +1,5 @@
 export interface IAlien {
-    type: string, 
+    type: string,
     submitted_by: string,
     id: number,
     description: string
@@ -17,13 +17,22 @@ export class Encounter {
         public date: string,
         public action: string,
         public colonist_id: string
-    ){}
+    ){
+      this.date = this.encounterDate;
+    }
+    get encounterDate() {
+
+      let date = new Date();
+
+      return `${date.getFullYear()} - ${date.getMonth()} - ${date.getDate()}`;
+    }
  }
 
 export class Colonist {
     constructor(
         public name: string,
         public age: number,
-        public job_id: string
+        public job_id: string,
+        public id?: string
     ){}
 }

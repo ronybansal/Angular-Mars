@@ -12,9 +12,10 @@
 
 .enter-button a {
   display: block;
-  width: 100px;
-  height: 100px;
+  margin: 0 auto;
+  width: 75px;
+  height: 75px;
   background: rgba(237,237,237,.2);
-  opacity: .2;
   border-radius: 50%;
+  animation: border-pulse 2s infinite;
 }

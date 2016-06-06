@@ -29,10 +29,15 @@ export class RegisterComponent implements OnInit {
     this.occupationService.getJobs()
       .then( jobs => this.occupations = jobs);
   }
-  onSubmit(event, form): void {
+  onSubmit(event): void {
     this.colonistService.createColonist(this.colonist)
-      .then( colonist => this.router.navigate(['/encounters']) )
+      .then( (colonist) => {
+        this.router.navigate(['/encounters']),
+        sessionStorage.setItem('colonistId', colonist.id)
+      }
+    );
   }
+
   get noOccupation() : boolean {
     return this.colonist.job_id === this.NO_OCCUPATION_SELECTED;
   }
