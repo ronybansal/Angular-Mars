@@ -3,14 +3,14 @@
 
   <form #registerForm="ngForm" (ngSubmit)="onSubmit($event)">
     <div>
-      <input ngControl="name" [(ngModel)]="colonist.name" type="text" id="name" placeholder=" Name" />
+      <input ngControl="name" [(ngModel)]="colonist.name" type="text" id="name" placeholder=" Name" required/>
     </div>
 
     <div>
-      <input ngControl="age" [(ngModel)]="colonist.age" type="number" id="age" placeholder=" Age"/>
+      <input ngControl="age" [(ngModel)]="colonist.age" type="number" id="age" placeholder=" Age" required/>
     </div>
 
-    <select ngControl="job" [(ngModel)]="colonist.job_id" class="Select occupation" >
+    <select ngControl="job" [(ngModel)]="colonist.job_id" class="Select occupation" required>
       <option [value]=NO_OCCUPATION_SELECTED> Select occupation </option>
       <option *ngFor="let job of occupations" [value]="job.id">{{ job.name }} </option>
     </select>

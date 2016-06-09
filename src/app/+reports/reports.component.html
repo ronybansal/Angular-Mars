@@ -5,14 +5,14 @@
 
   <form #reportForm="ngForm" (ngSubmit)="onSubmit($event)">
 
-    <select ngControl="atype" [(ngModel)]="encounters.atype" class="alien-type">
+    <select ngControl="atype" [(ngModel)]="encounters.atype" class="alien-type" required>
       <option [value]=NO_ALIEN_SELECTED> Select alien type </option>
       <option *ngFor="let alien of aliens" [value]="alien.type">{{ alien.type }} </option>
     </select>
 
     <textarea ngControl="action"
           [(ngModel)]="encounters.action" type="text" id="action"
-          placeholder=" Action taken">
+          placeholder=" Action taken" required>
     </textarea>
 
       <button type="submit" [disabled]="noEncounters || !reportForm.form.valid"> Submit Report </button>
